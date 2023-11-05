@@ -42,7 +42,7 @@ class RT1ActionTokenizer:
   def __init__(self,
                action_spec: tensorspec_utils.TensorSpecStruct,
                vocab_size: int,
-               action_order: Optional[list[str]] = None):
+               action_order = None):
     """Instantiates an RT1ActionTokenizer.
 
     Args:
@@ -97,7 +97,7 @@ class RT1ActionTokenizer:
     return self._action_spec
 
   @property
-  def action_order(self) -> list[str]:
+  def action_order(self):
     return self._action_order
 
   def tokenize(self, action: tensorspec_utils.TensorSpecStruct) -> tf.Tensor:
